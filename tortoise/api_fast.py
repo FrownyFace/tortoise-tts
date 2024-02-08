@@ -359,7 +359,8 @@ class TextToSpeech:
         if voice_samples is not None:
             auto_conditioning = self.get_conditioning_latents(voice_samples, return_mels=False)
         else:
-            auto_conditioning  = self.get_random_conditioning_latents()
+            # auto_conditioning  = self.get_random_conditioning_latents()
+            auto_conditioning  = conditioning_latents
         auto_conditioning = auto_conditioning.to(self.device)
 
         with torch.no_grad():
